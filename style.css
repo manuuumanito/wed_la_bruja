@@ -37,7 +37,7 @@ body::before {
 
 body::after {
     content: "";
-    background-image: url("/api/placeholder/30/30"); /* Aquí iría una imagen de una flor */
+    background-image: url("flor_morada.jpg"); /* Aquí iría una imagen de una flor */
     position: fixed;
     bottom: 30px;
     left: 30px;
