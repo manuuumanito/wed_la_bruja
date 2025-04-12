@@ -3,173 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Inventario la brujita</title>
-    <link rel="icon" href="logo_pyme_la_bruja.jpg" type="image/jpg">
-    <link rel="stylesheet" href="style.css">
+    <title>Inventario La Brujita</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo_pyme_la_bruja.jpg" type="image/png">
+    <link rel="stylesheet" href="style.css"  type="text/css">
 </head>
 <body>
     <header>
         <div class="logo-container">
             <div class="logo-placeholder">
-                <img src="logo_pyme_la_bruja.jpg" alt="Logo Papelería Creaciones La Bruja" />
+                <!-- RNF24: Logo en esquina superior izquierda -->
+                <img src="logo_pyme_la_bruja.jpg" alt="Logo Creaciones La Bruja" />
             </div>
             <div class="logo-text">
                 <h1>Creaciones La Bruja</h1>
-                <p>Gestión de Inventario - Papelería</p>
+                <p>Sistema de Gestión de Inventario</p>
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Inventario</a></li>
-                <li><a href="#">Ventas</a></li>
-                <li><a href="#">Proveedores</a></li>
-                <li><a href="#">Informes</a></li>
+                <li class="tooltips">
+                    <a href="#" class="active">Inventario</a>
+                    <span class="tooltiptext">Gestión de productos y materia prima</span>
+                </li>
+                <li class="tooltips">
+                    <a href="#">Movimientos</a>
+                    <span class="tooltiptext">Registro de entradas y salidas</span>
+                </li>
+                <li class="tooltips">
+                    <a href="#">Reportes</a>
+                    <span class="tooltiptext">Generación de informes y estadísticas</span>
+                </li>
+                <li class="tooltips">
+                    <a href="#">Configuración</a>
+                    <span class="tooltiptext">Ajustes del sistema</span>
+                </li>
+                <li class="tooltips">
+                    <a href="#">Ayuda</a>
+                    <span class="tooltiptext">Soporte y manuales</span>
+                </li>
             </ul>
         </nav>
+        <div class="user-menu">
+            <div class="user-info">
+                <div class="user-name">Admin Usuario</div>
+                <div class="user-role">Administrador</div>
+            </div>
+            <div class="user-avatar">AU</div>
+        </div>
     </header>
     
     <main>
+        <!-- Alertas de stock bajo (RF15, RF16) -->
+        <div class="alert-banner">
+            <div class="alert-message">
+                <span class="alert-icon">⚠️</span>
+                <span>¡Alerta! Hay 3 productos con stock por debajo del mínimo (70%). Revisa el inventario.</span>
+            </div>
+            <button class="alert-close">&times;</button>
+        </div>
+        <div class="alert-banner critical">
+            <div class="alert-message">
+                <span class="alert-icon">🔴</span>
+                <span>¡Alerta crítica! El producto "Cuaderno espiral A4" tiene stock crítico (menos del 50%). ¡Reponer urgente!</span>
+            </div>
+            <button class="alert-close">&times;</button>
+        </div>
+        
         <div class="dashboard">
             <aside class="sidebar">
-                <h3>Categorías</h3>
+                <h3>Gestión de Inventario</h3>
                 <ul>
-                    <li><a href="#" class="active">Todos los productos</a></li>
-                    <li><a href="#">Útiles escolares</a></li>
-                    <li><a href="#">Artículos de oficina</a></li>
-                    <li><a href="#">Cuadernos y libretas</a></li>
-                    <li><a href="#">Arte y manualidades</a></li>
-                    <li><a href="#">Mochilas y estuches</a></li>
-                    <li><a href="#">Papelería creativa</a></li>
-                    <li><a href="#">Agenda y planificación</a></li>
+                    <li><a href="#" class="active">Productos</a></li>
+                    <li><a href="#">Materia Prima</a></li>
+                    <li><a href="#">Movimientos</a></li>
+                    <li><a href="#">Proporciones</a></li>
+                    <li><a href="#">Proveedores</a></li>
                 </ul>
                 
-                <h3>Gestión</h3>
+                <h3>Reportes</h3>
                 <ul>
-                    <li><a href="#">Agregar producto</a></li>
-                    <li><a href="#">Editar categorías</a></li>
-                    <li><a href="#">Control de stock</a></li>
-                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Inventario Actual</a></li>
+                    <li><a href="#">Movimientos por Fecha</a></li>
+                    <li><a href="#">Alertas de Stock</a></li>
+                    <li><a href="#">Estadísticas</a></li>
+                </ul>
+                
+                <h3>Configuración</h3>
+                <ul>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Usuarios</a></li>
+                    <li><a href="#">Copias de Seguridad</a></li>
+                    <li><a href="#">Configuración General</a></li>
                 </ul>
             </aside>
             
             <section class="content">
-                <h2>Inventario de Productos</h2>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar productos...">
-                    <button>Buscar</button>
-                </div>
-                
-                <table class="inventory-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Producto</th>
-                            <th>Categoría</th>
-                            <th>Stock</th>
-                            <th>Precio</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Cuaderno espiral A4 100 hojas</td>
-                            <td>Cuadernos y libretas</td>
-                            <td>35</td>
-                            <td>$4.99</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Set 12 lápices de colores</td>
-                            <td>Arte y manualidades</td>
-                            <td>22</td>
-                            <td>$7.50</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Bolígrafo gel pastel</td>
-                            <td>Útiles escolares</td>
-                            <td>48</td>
-                            <td>$1.25</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>004</td>
-                            <td>Agenda semanal tamaño A5</td>
-                            <td>Agenda y planificación</td>
-                            <td>15</td>
-                            <td>$12.99</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>005</td>
-                            <td>Mochila escolar decorada</td>
-                            <td>Mochilas y estuches</td>
-                            <td>10</td>
-                            <td>$24.50</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>006</td>
-                            <td>Set marcadores pastel</td>
-                            <td>Arte y manualidades</td>
-                            <td>18</td>
-                            <td>$8.75</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>007</td>
-                            <td>Papel decorativo scrapbook</td>
-                            <td>Papelería creativa</td>
-                            <td>25</td>
-                            <td>$5.99</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>008</td>
-                            <td>Organizador de escritorio</td>
-                            <td>Artículos de oficina</td>
-                            <td>8</td>
-                            <td>$15.25</td>
-                            <td class="action-buttons">
-                                <button class="edit-btn">Editar</button>
-                                <button class="delete-btn">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <a href="#" class="add-item">+ Agregar nuevo producto</a>
-            </section>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Papelería Creaciones La Bruja - Sistema de Gestión de Inventario</p>
-    </footer>
-</body>
-</html>
+                <div class="tab-container">
+                    <div class="tabs">
+                        <button class="tab-button active">Productos</button>
+                        <button class="tab-button">Materia Prima</button>
+                        <button class="tab-button">Proporciones</button>
+                    </div>
+                    
+                    <div class="tab-content active">
+                        <div class="content-header">
+                            <h2>Inventario de Productos</h2>
+                            <div class="action-buttons-header">
+                                <button class="btn btn-primary" id="add-product-btn">+ Agregar Producto</button>
+                                <button class="btn btn-secondary">Exportar PDF</button>
+                                <button class="btn btn-secondary">Exportar Excel</button>
+                            </div>
+                        </div>
+                        
+                        <div class="search-filters">
+                            <input type="text" placeholder="Buscar productos...">
+                            <select>
+                                <option value="">Todas las categorías</option>
+                                <option value="utiles">Útiles escolares</option>
+                                <option value="oficina">Artículos de oficina</option>
+                                <option value="cuadernos">Cuadernos y libretas</option>
+                                <option value="arte">Arte y manualidades</option>
+                                <option value="mochilas">Mochilas y estuches</option>
+                                <option value="creativa">Papelería creativa</option>
+                                <option value="agenda">Agenda y planificación</option>
+                            </select>
+                            <select>
+                                <option value="">Todos los proveedores</option>
+                                <option value="proveedor1">Norma</option>
+                                <option value="proveedor2">BIC</option>
+                                <option value="proveedor3">Artline</option>
+                                <option value="proveedor4">Faber-Castell</option>
+                            </select>
+                            <button class="btn btn-primary">Filtrar</button>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="inventory-table">
+                                <thead>
+                                    <tr>
+                                        <th class="tooltips">Código
+                                            <span class="tooltiptext">Código único del producto</span>
+                                        </th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Stock</th>
+                                        <th>Stock Mínimo</th>
+                                        <th>Precio</th>
+                                        <th>Proveedor</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Cuaderno espiral A4 100 hojas</td>
+                                        <td>Cuadernos y libretas</td>
+                                        <td class="stock-critical">5</td>
+                                        <td>20</td>
+                                        <td>$4.99</td>
+                                        <td>Norma</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P002</td>
+                                        <td>Set 12 lápices de colores</td>
+                                        <td>Arte y manualidades</td>
+                                        <td class="stock-alert">15</td>
+                                        <td>20</td>
+                                        <td>$7.50</td>
+                                        <td>Faber-Castell</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P003</td>
+                                        <td>Bolígrafo gel pastel</td>
+                                        <td>Útiles escolares</td>
+                                        <td>48</td>
+                                        <td>15</td>
+                                        <td>$1.25</td>
+                                        <td>BIC</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P004</td>
+                                        <td>Agenda semanal tamaño A5</td>
+                                        <td>Agenda y planificación</td>
+                                        <td>15</td>
+                                        <td>10</td>
+                                        <td>$12.99</td>
+                                        <td>Artline</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P005</td>
+                                        <td>Mochila escolar decorada</td>
+                                        <td>Mochilas y estuches</td>
+                                        <td class="stock-alert">7</td>
+                                        <td>10</td>
+                                        <td>$24.50</td>
+                                        <td>Artline</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P006</td>
+                                        <td>Set marcadores pastel</td>
+                                        <td>Arte y manualidades</td>
+                                        <td>18</td>
+                                        <td>15</td>
+                                        <td>$8.75</td>
+                                        <td>Faber-Castell</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>P007</td>
+                                        <td>Papel decorativo scrapbook</td>
+                                        <td>Papelería creativa</td>
+                                        <td>25</td>
+                                        <td>20</td>
+                                        <td>$5.99</td>
+                                        <td>Artline</td>
+                                        <td class="action-buttons">
+                                            <button class="btn btn-secondary">Editar</button>
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">&raquo;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contenido de Materia Prima (RF6-RF10) - Oculto por defecto -->
+                    <div class="tab-content">
+                        <div class="content-header">
+                            <h2>Inventario de Materia Prima</h2>
+                            <div class="action-buttons-header">
+                                <button class="btn btn-primary">+ Agregar Materia Prima</button>
+                                <button class="btn btn-secondary">Exportar PDF</button>
+                                <button class="btn btn-secondary">Exportar Excel</button>
+                            </div>
+                        </div>
