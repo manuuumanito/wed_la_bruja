@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Inventario la brujita</title>
+    <link rel="icon" href="logo_pyme_la_bruja.jpg" type="image/jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-placeholder">
+                <img src="logo_pyme_la_bruja.jpg" alt="Logo Papelería Creaciones La Bruja" />
+            </div>
+            <div class="logo-text">
+                <h1>Creaciones La Bruja</h1>
+                <p>Gestión de Inventario - Papelería</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Inventario</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li><a href="#">Proveedores</a></li>
+                <li><a href="#">Informes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="dashboard">
+            <aside class="sidebar">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="#" class="active">Todos los productos</a></li>
+                    <li><a href="#">Útiles escolares</a></li>
+                    <li><a href="#">Artículos de oficina</a></li>
+                    <li><a href="#">Cuadernos y libretas</a></li>
+                    <li><a href="#">Arte y manualidades</a></li>
+                    <li><a href="#">Mochilas y estuches</a></li>
+                    <li><a href="#">Papelería creativa</a></li>
+                    <li><a href="#">Agenda y planificación</a></li>
+                </ul>
+                
+                <h3>Gestión</h3>
+                <ul>
+                    <li><a href="#">Agregar producto</a></li>
+                    <li><a href="#">Editar categorías</a></li>
+                    <li><a href="#">Control de stock</a></li>
+                    <li><a href="#">Configuración</a></li>
+                </ul>
+            </aside>
+            
+            <section class="content">
+                <h2>Inventario de Productos</h2>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button>Buscar</button>
+                </div>
+                
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Cuaderno espiral A4 100 hojas</td>
+                            <td>Cuadernos y libretas</td>
+                            <td>35</td>
+                            <td>$4.99</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Set 12 lápices de colores</td>
+                            <td>Arte y manualidades</td>
+                            <td>22</td>
+                            <td>$7.50</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Bolígrafo gel pastel</td>
+                            <td>Útiles escolares</td>
+                            <td>48</td>
+                            <td>$1.25</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Agenda semanal tamaño A5</td>
+                            <td>Agenda y planificación</td>
+                            <td>15</td>
+                            <td>$12.99</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Mochila escolar decorada</td>
+                            <td>Mochilas y estuches</td>
+                            <td>10</td>
+                            <td>$24.50</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>Set marcadores pastel</td>
+                            <td>Arte y manualidades</td>
+                            <td>18</td>
+                            <td>$8.75</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>007</td>
+                            <td>Papel decorativo scrapbook</td>
+                            <td>Papelería creativa</td>
+                            <td>25</td>
+                            <td>$5.99</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>008</td>
+                            <td>Organizador de escritorio</td>
+                            <td>Artículos de oficina</td>
+                            <td>8</td>
+                            <td>$15.25</td>
+                            <td class="action-buttons">
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <a href="#" class="add-item">+ Agregar nuevo producto</a>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Papelería Creaciones La Bruja - Sistema de Gestión de Inventario</p>
+    </footer>
+</body>
+</html>
